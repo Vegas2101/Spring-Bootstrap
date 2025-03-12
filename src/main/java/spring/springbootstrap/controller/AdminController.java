@@ -44,11 +44,18 @@ public class AdminController {
 
     @PostMapping("/new")
     public String createUser(@ModelAttribute("user") User user,
-                             @RequestParam("roles") Set<Long> roleIds) {
+                             @RequestParam("roles") Set<Long> roleIds,
+                             Model model) {
         if (roleIds == null || roleIds.isEmpty()) {
             throw new IllegalArgumentException("Роли не выбраны");
         }
-        userService.saveUser(user, roleIds);
+        boolean isUserSaved =userService.saveUser(user, roleIds);
+        if (!isUserSaved) {
+            model.addAttribute("error", "Пользователь с таким email уже существует");
+            model.addAttribute("user", user);
+            model.addAttribute("allRoles", userService.getAllRoles());
+            return "createUser";
+        }
         return "redirect:/admin";
     }
 

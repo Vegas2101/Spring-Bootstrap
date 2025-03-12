@@ -94,31 +94,38 @@
                         <input type="hidden" id="hiddenUpdateUserId" name="userId">
                         <div class="mb-3 text-center">
                             <label for="userId" class="form-label fw-bold">ID</label>
-                            <input type="text" class="form-control" id="userId" disabled style="width: 75%; margin: auto;">
+                            <input type="text" class="form-control" id="userId" disabled
+                                   style="width: 75%; margin: auto;">
                         </div>
                         <div class="mb-3 text-center">
                             <label for="firstName" class="form-label fw-bold">First Name</label>
-                            <input type="text" class="form-control" id="firstName" name="firstName" required style="width: 75%; margin: auto;">
+                            <input type="text" class="form-control" id="firstName" name="firstName" required
+                                   style="width: 75%; margin: auto;">
                         </div>
                         <div class="mb-3 text-center">
                             <label for="lastName" class="form-label fw-bold">Last Name</label>
-                            <input type="text" class="form-control" id="lastName" name="lastName" required style="width: 75%; margin: auto;">
+                            <input type="text" class="form-control" id="lastName" name="lastName" required
+                                   style="width: 75%; margin: auto;">
                         </div>
                         <div class="mb-3 text-center">
                             <label for="age" class="form-label fw-bold">Age</label>
-                            <input type="number" class="form-control" id="age" name="age" required style="width: 75%; margin: auto;">
+                            <input type="number" class="form-control" id="age" name="age" required
+                                   style="width: 75%; margin: auto;">
                         </div>
                         <div class="mb-3 text-center">
                             <label for="email" class="form-label fw-bold">Email</label>
-                            <input type="email" class="form-control" id="email" name="email" required style="width: 75%; margin: auto;">
+                            <input type="email" class="form-control" id="email" name="email" required
+                                   style="width: 75%; margin: auto;">
                         </div>
                         <div class="mb-3 text-center">
                             <label for="password" class="form-label fw-bold">Password</label>
-                            <input type="password" class="form-control" id="password" name="password" style="width: 75%; margin: auto;">
+                            <input type="password" class="form-control" id="password" name="password"
+                                   style="width: 75%; margin: auto;">
                         </div>
                         <div class="mb-3 text-center">
                             <label class="form-label fw-bold">Role</label>
-                            <select class="form-select" name="roles" multiple required id="roles" style="width: 75%; margin: auto;">
+                            <select class="form-select" name="roles" multiple required id="roles"
+                                    style="width: 75%; margin: auto;">
                                 <option th:each="role : ${allRoles}" th:value="${role.id}"
                                         th:text="${role.authority}"></option>
                             </select>
@@ -145,27 +152,33 @@
                         <input type="hidden" id="hiddenDeleteUserId" name="userId">
                         <div class="mb-3 text-center">
                             <label for="userId" class="form-label fw-bold">ID</label>
-                            <input type="text" class="form-control" id="deleteUserId" disabled style="width: 75%; margin: auto;">
+                            <input type="text" class="form-control" id="deleteUserId" disabled
+                                   style="width: 75%; margin: auto;">
                         </div>
                         <div class="mb-3 text-center">
                             <label for="firstName" class="form-label fw-bold">First Name</label>
-                            <input type="text" class="form-control" id="deleteFirstName" name="firstName" disabled style="width: 75%; margin: auto;">
+                            <input type="text" class="form-control" id="deleteFirstName" name="firstName" disabled
+                                   style="width: 75%; margin: auto;">
                         </div>
                         <div class="mb-3 text-center">
                             <label for="lastName" class="form-label fw-bold">Last Name</label>
-                            <input type="text" class="form-control" id="deleteLastName" name="lastName" disabled style="width: 75%; margin: auto;">
+                            <input type="text" class="form-control" id="deleteLastName" name="lastName" disabled
+                                   style="width: 75%; margin: auto;">
                         </div>
                         <div class="mb-3 text-center">
                             <label for="age" class="form-label fw-bold">Age</label>
-                            <input type="number" class="form-control" id="deleteAge" name="age" disabled style="width: 75%; margin: auto;">
+                            <input type="number" class="form-control" id="deleteAge" name="age" disabled
+                                   style="width: 75%; margin: auto;">
                         </div>
                         <div class="mb-3 text-center">
                             <label for="email" class="form-label fw-bold">Email</label>
-                            <input type="email" class="form-control" id="deleteEmail" name="email" disabled style="width: 75%; margin: auto;">
+                            <input type="email" class="form-control" id="deleteEmail" name="email" disabled
+                                   style="width: 75%; margin: auto;">
                         </div>
                         <div class="mb-3 text-center">
                             <label class="form-label fw-bold">Role</label>
-                            <select class="form-select" name="roles" multiple disabled id="deleteRoles" style="width: 75%; margin: auto;">
+                            <select class="form-select" name="roles" multiple disabled id="deleteRoles"
+                                    style="width: 75%; margin: auto;">
                                 <option th:each="role : ${allRoles}" th:value="${role.id}"
                                         th:text="${role.authority}"></option>
                             </select>
@@ -239,7 +252,6 @@
                 });
         }
     </script>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </div>
 </body>

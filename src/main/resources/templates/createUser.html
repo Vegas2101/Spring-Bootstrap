@@ -17,7 +17,7 @@
     </div>
 </nav>
 <div class="d-flex">
-    <div class="bg-light p-3" style="width: 200px; height: 100vh;">
+    <div class="bg-light p-3" style="width: 300px; height: 100vh;">
         <ul class="nav flex-column">
             <li class="nav-item">
                 <a class="nav-link active text-white bg-primary" th:href="@{/admin}">Admin</a>
@@ -38,35 +38,44 @@
             </li>
         </ul>
         <div class="card mt-3">
-                    <div class="card-header border-1">
-                        <h5 class="card-title mb-0">Add new user</h5>
-                    </div>
-                    <div class="card-body border-0">
+            <div class="card-header border-1">
+                <h5 class="card-title mb-0">Add new user</h5>
+            </div>
+            <div class="card-body border-0">
+                <div th:if="${error}" class="alert alert-danger" role="alert">
+                    <span th:text="${error}"></span>
+                </div>
                 <form th:action="@{/admin/new}" method="post">
                     <div class="mb-3 fw-bold text-center ">
                         <label class="form-label">First name</label>
-                        <input type="text" class="form-control form-control-sm" name="firstName" placeholder="First name" required style="width: 75%; margin: auto;">
+                        <input type="text" class="form-control form-control-sm" name="firstName"
+                               placeholder="First name" required style="width: 75%; margin: auto;">
                     </div>
                     <div class="mb-3 fw-bold text-center">
                         <label class="form-label">Last name</label>
-                        <input type="text" class="form-control" name="lastName" placeholder="Last name" required style="width: 75%; margin: auto;">
+                        <input type="text" class="form-control" name="lastName" placeholder="Last name" required
+                               style="width: 75%; margin: auto;">
                     </div>
                     <div class="mb-3 fw-bold text-center">
                         <label class="form-label">Age</label>
-                        <input type="number" class="form-control" name="age" placeholder="Age" required style="width: 75%; margin: auto;">
+                        <input type="number" class="form-control" name="age" placeholder="Age" required
+                               style="width: 75%; margin: auto;">
                     </div>
                     <div class="mb-3 fw-bold text-center">
                         <label class="form-label">Email</label>
-                        <input type="email" class="form-control" name="email" placeholder="Email" required style="width: 75%; margin: auto;">
+                        <input type="email" class="form-control" name="email" placeholder="Email" required
+                               style="width: 75%; margin: auto;">
                     </div>
                     <div class="mb-3 fw-bold text-center">
                         <label class="form-label">Password</label>
-                        <input type="password" class="form-control" name="password" placeholder="Password" required style="width: 75%; margin: auto;">
+                        <input type="password" class="form-control" name="password" placeholder="Password" required
+                               style="width: 75%; margin: auto;">
                     </div>
                     <div class="mb-3 fw-bold text-center">
                         <label class="form-label">Role</label>
                         <select class="form-select" name="roles" multiple required style="width: 75%; margin: auto;">
-                            <option th:each="role : ${allRoles}" th:value="${role.id}" th:text="${role.authority}"></option>
+                            <option th:each="role : ${allRoles}" th:value="${role.id}"
+                                    th:text="${role.authority}"></option>
                         </select>
                     </div>
                     <div class="text-center">

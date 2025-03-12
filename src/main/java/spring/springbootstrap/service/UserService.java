@@ -54,7 +54,7 @@ public class UserService implements UserDetailsService {
     public boolean saveUser(User user, Set<Long> roleIds) {
         User userFromDB = userRepository.findByEmail(user.getUsername());
         if (userFromDB != null) {
-            throw new IllegalArgumentException("Пользователь с таким мылом есть");
+            return false;
         }
 
         List<Role> rolesList = roleRepository.findAllById(roleIds);
@@ -82,7 +82,6 @@ public class UserService implements UserDetailsService {
         return roleRepository.findAll();
     }
 
-    // Получение пользователя по email
     public User findByEmail(String email) {
         User user = userRepository.findByEmail(email);
         if (user == null) {
@@ -93,5 +92,4 @@ public class UserService implements UserDetailsService {
     public List<Role> getRolesByIds(List<Long> roleIds) {
         return roleRepository.findAllById(roleIds);
     }
-
 }
